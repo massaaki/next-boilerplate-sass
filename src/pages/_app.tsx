@@ -4,6 +4,8 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import * as gtag from '../../lib/gtag'
 
+import 'themes/global.scss'
+
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
   useEffect(() => {
