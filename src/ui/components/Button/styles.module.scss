@@ -8,15 +8,17 @@
 
   a,
   button {
+    border: none;
     text-align: center;
     background: $color-secondary;
     text-decoration: none;
-    color: $color-primary;
+    color: $black;
     font-size: $font-size-medium;
     font-weight: bold;
     max-width: 30rem;
     width: 100%;
     padding: $spacing-xxsmall $spacing-xsmall;
     border-radius: $border-radius;
+    cursor: pointer;
   }
 }
