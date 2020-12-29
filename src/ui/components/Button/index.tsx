@@ -7,18 +7,42 @@ export type IButtonProps = {
   url?: string
   handleClick?: (...args: any[]) => void
   as: 'button' | 'link'
+  background?: 'primary' | 'secondary'
+  color?: 'white' | 'black'
 }
 
-const Button = ({ children, as, url, handleClick }: IButtonProps) => {
+const Button = ({
+  children,
+  as,
+  url,
+  handleClick,
+  background = 'primary',
+  color = 'white'
+}: IButtonProps) => {
   return (
     <div className={styles.btn}>
       {as === 'link' && (
         <Link href={url}>
-          <a>{children}</a>
+          <a
+            className={`${
+              background === 'primary' ? styles.primary : styles.secondary
+            } ${color === 'white' ? styles.white : styles.black}`}
+          >
+            {children}
+          </a>
         </Link>
       )}
 
-      {as === 'button' && <button onClick={handleClick}>{children}</button>}
+      {as === 'button' && (
+        <button
+          onClick={handleClick}
+          className={`${
+            background === 'primary' ? styles.primary : styles.secondary
+          } ${color === 'white' ? styles.white : styles.black}`}
+        >
+          {children}
+        </button>
+      )}
     </div>
   )
 }
